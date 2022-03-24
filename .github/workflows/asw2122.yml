@@ -55,7 +55,7 @@ jobs:
         API_URI: http://${{ secrets.DEPLOY_HOST }}:5000/api
       with:
           name: HugoLebredo/dede/webapp
-          username: ${{ github.actor }}
+          username: ${{ secrets.DOCKER_USR_TOKEN }}
           password: ${{ secrets.DOCKER_PUSH_TOKEN }}
           registry: ghcr.io
           workdir: webapp
@@ -70,7 +70,7 @@ jobs:
       uses: elgohr/Publish-Docker-Github-Action@3.04
       with:
           name: HugoLebredo/dede/restapi
-          username: ${{ github.actor }}
+          username: ${{ secrets.DOCKER_USR_TOKEN }}
           password: ${{ secrets.DOCKER_PUSH_TOKEN }}
           registry: ghcr.io
           workdir: restapi
