@@ -11,8 +11,8 @@ defineFeature(feature, test => {
   beforeAll(async () => {
     browser = process.env.GITHUB_ACTIONS
       ? await puppeteer.launch()
-      : await puppeteer.launch({ headless: true}); //subir a github
-//      : await puppeteer.launch({ headless: false, slowMo: 50 }); // verlo en local
+//      : await puppeteer.launch({ headless: true}); //subir a github
+      : await puppeteer.launch({ headless: false, slowMo: 50 }); // verlo en local
     page = await browser.newPage();
 
     await page
